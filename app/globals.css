@@ -4,14 +4,15 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   
-  /* Clean minimalist palette */
-  --bg: #fafafa;
+  /* Newtech light + cool pastel palette */
+  --bg: #f8f9fc;
   --card: #ffffff;
   --text: #171717;
   --text-muted: #52525b;
   --border: #e4e4e7;
-  --accent: #18181b;
-  --accent-hover: #27272a;
+  --accent: #9cade6;
+  --accent-dark: #7b9ad4;
+  --accent-light: #c5d4f5;
   --success: #16a34a;
   --error: #dc2626;
 }
@@ -43,7 +44,7 @@ body {
 
 .input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.06);
+  box-shadow: 0 0 0 3px rgba(156, 172, 230, 0.18);
 }
 
 .input.error {
@@ -68,7 +69,7 @@ body {
 .dropzone:hover,
 .dropzone.dragover {
   border-color: var(--accent);
-  background: #f4f4f5;
+  background: #f8fafc;
 }
 
 .dropzone-logo {
@@ -137,11 +138,13 @@ body {
 
 .btn-primary {
   background: var(--accent);
-  color: white;
+  color: #1e2937;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: var(--accent-dark);
+  color: #0f172a;
 }
 
 .btn-secondary {
@@ -168,7 +171,7 @@ body {
 
 /* Slider */
 .slider {
-  accent-color: var(--accent);
+  accent-color: var(--accent-dark);
 }
 
 /* Small labels */
@@ -186,7 +189,7 @@ body {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  background: #18181b;
+  background: #1e2937;
   color: white;
   padding: 12px 20px;
   border-radius: 9999px;
@@ -194,7 +197,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.15);
   animation: toastIn 0.2s ease, toastOut 0.2s ease 2.3s forwards;
   z-index: 100;
 }
@@ -214,7 +217,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 28px;
-  background: #f8f8f8;
+  background: #f1f5f9;
   border-radius: 20px;
   min-height: 380px;
 }
@@ -224,8 +227,40 @@ body {
   font-size: 13px;
   line-height: 1.5;
   color: var(--text-muted);
-  background: #f8f8f8;
+  background: #f1f5f9;
   padding: 12px 14px;
   border-radius: 10px;
-  border-left: 3px solid #d4d4d8;
+  border-left: 3px solid #c5d4f5;
+}
+
+/* ========== NEWTECH SOFT PASTEL MESH (Cool tones - Intensity C) ========== */
+.mesh-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #f8f9fc;
+  background-image:
+    /* Main lavender-blue blob (user's chosen color) */
+    radial-gradient(circle at 18% 22%, rgba(156, 172, 230, 0.18) 0%, transparent 52%),
+    /* Soft sky blue */
+    radial-gradient(circle at 82% 18%, rgba(156, 172, 230, 0.12) 0%, transparent 48%),
+    /* Muted cool blue */
+    radial-gradient(circle at 55% 82%, rgba(140, 175, 215, 0.14) 0%, transparent 55%),
+    /* Subtle supporting blob */
+    radial-gradient(circle at 28% 68%, rgba(170, 195, 235, 0.09) 0%, transparent 42%);
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+/* Make cards feel more integrated with the new background */
+.preview-card {
+  background: var(--card);
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.07), 0 4px 6px -1px rgb(0 0 0 / 0.04);
+}
+
+/* Subtle improvement to dropzone on new bg */
+.dropzone {
+  background: #ffffff;
 }
