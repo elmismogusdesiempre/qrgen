@@ -54,7 +54,7 @@ export default function QRGenerator() {
       const ctx = canvas.getContext('2d')!;
       canvas.width = targetSize;
       canvas.height = targetSize;
-      ctx.fillStyle = '#f4f4f5';
+      ctx.fillStyle = '#e8edf5';
       ctx.fillRect(0, 0, targetSize, targetSize);
       return;
     }
@@ -281,17 +281,20 @@ export default function QRGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-[#171717]">
+    <div className="min-h-screen text-[#171717]">
+      {/* Soft pastel mesh background (newtech cool tones) */}
+      <div className="mesh-background" />
+
       {/* Minimal header */}
-      <header className="border-b border-[#e4e4e7] bg-white/80 backdrop-blur-md sticky top-0 z-50">
+      <header className="border-b border-[#e2e8f0] bg-white/90 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-black flex items-center justify-center">
-              <span className="text-white font-semibold text-xl tracking-tighter">QR</span>
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#9cade6' }}>
+              <span className="text-[#1e2937] font-semibold text-xl tracking-tighter">QR</span>
             </div>
             <div>
               <div className="font-semibold tracking-tight text-xl">QR con Logo</div>
-              <div className="text-[10px] text-[#52525b] -mt-1">PERMANENTE • PRIVADO</div>
+              <div className="text-[10px] text-[#64748b] -mt-1">PERMANENTE • PRIVADO</div>
             </div>
           </div>
           <button 
@@ -487,7 +490,7 @@ export default function QRGenerator() {
                   <div className="text-xs text-[#52525b]">Actualiza en tiempo real</div>
                 </div>
                 {url && isValidUrl && (
-                  <div className="text-[10px] px-3 py-1 rounded-full bg-[#f4f4f5] text-[#52525b] font-medium">
+                  <div className="text-[10px] px-3 py-1 rounded-full bg-[#e0e7ff] text-[#475569] font-medium">
                     NIVEL H • SEGURO
                   </div>
                 )}
